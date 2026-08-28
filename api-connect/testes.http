@@ -1,0 +1,52 @@
+### Configuração
+@baseUrl = http://localhost:3000
+
+### 1. TESTE DE SUCESSO: Criação de usuário
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "nome": "João Silva",
+  "email": "joao@example.com"
+}
+
+### 2. TESTE DE SUCESSO: Criação de outro usuário
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "nome": "Maria Santos",
+  "email": "maria@example.com"
+}
+
+### 3. TESTE DE FALHA (Validação): Falta o campo email
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "nome": "Pedro Costa"
+}
+
+### 4. TESTE DE FALHA (Validação): Falta o campo nome
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "email": "carlos@example.com"
+}
+
+### 5. TESTE DE SUCESSO: Listagem de todos os usuários
+GET {{baseUrl}}/users
+Content-Type: application/json
+
+### 6. TESTE DE SUCESSO: Buscar usuário pelo ID 1
+GET {{baseUrl}}/users/1
+Content-Type: application/json
+
+### 7. TESTE DE SUCESSO: Buscar usuário pelo ID 2
+GET {{baseUrl}}/users/2
+Content-Type: application/json
+
+### 8. TESTE DE FALHA (Not Found): Buscar usuário com ID inexistente
+GET {{baseUrl}}/users/999
+Content-Type: application/json
