@@ -1,103 +1,38 @@
-README.md
 # API Connect
 
 ## Objetivo
 
-API REST simples para gerenciamento de usuários.
+A API Connect é uma API REST desenvolvida para o gerenciamento de usuários.
 
-A API permite criar usuários, listar usuários cadastrados e buscar um usuário específico pelo seu ID.
+O projeto foi criado como um MVP para demonstrar a criação de endpoints de uma API back-end, permitindo cadastrar usuários, listar todos os usuários cadastrados e buscar um usuário específico pelo seu ID.
 
-Os dados são armazenados em memória e serão perdidos quando o servidor for reiniciado.
+Os dados são armazenados temporariamente em memória, sendo perdidos quando o servidor é reiniciado.
 
-## Tecnologias
+## Tecnologias utilizadas
 
 - Node.js
-- Express
+- Express.js
 - Body-parser
 - JavaScript
 - Git
 - GitHub
 
-## Como executar
+### Dependências
 
-### 1. Instalar as dependências
+- `express` — versão `4.18.2`
+- `body-parser` — versão `1.20.2`
+
+## Pré-requisitos
+
+Para executar o projeto localmente, é necessário ter instalado:
+
+- Node.js
+- npm
+- Git
+
+## Execução local
+
+### 1. Clonar o repositório
 
 ```bash
-npm install
-
-2. Iniciar o servidor
-npm start
-
-O servidor será executado em:
-
-http://localhost:3000
-
-Endpoints
-Método	Endpoint	Descrição
-POST	/users	Criar usuário
-GET	/users	Listar usuários
-GET	/users/:id	Buscar usuário por ID
-
-Exemplos
-Criar usuário
-POST /users
-
-{
-  "nome": "João Silva",
-  "email": "joao@email.com"
-}
-
-Resposta:
-
-{
-  "message": "Usuário criado com sucesso",
-  "usuario": {
-    "id": 1,
-    "nome": "João Silva",
-    "email": "joao@email.com"
-  }
-}
-
-Listar usuários
-GET /users
-
-Resposta:
-
-{
-  "total": 1,
-  "usuarios": [
-    {
-      "id": 1,
-      "nome": "João Silva",
-      "email": "joao@email.com"
-    }
-  ]
-}
-
-Buscar usuário por ID
-GET /users/1
-
-Resposta:
-
-{
-  "usuario": {
-    "id": 1,
-    "nome": "João Silva",
-    "email": "joao@email.com"
-  }
-}
-
-Validações
-Os campos nome e email são obrigatórios.
-
-Se algum deles não for informado, a API retorna:
-
-{
-  "error": "Campo \"nome\" é obrigatório"
-}
-
-ou:
-
-{
-  "error": "Campo \"email\" é obrigatório"
-}
+git clone https://github.com/SEU-USUARIO/api-connect-nome-sobrenome.git
